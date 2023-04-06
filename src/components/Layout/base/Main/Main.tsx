@@ -8,7 +8,11 @@ export type Props = ThemeProps & {
   children: React.ReactNode | React.ReactNode[]
 }
 
-function Component({ className, theme }: Props): React.ReactElement<Props> {
+function Component({
+  children,
+  className,
+  theme,
+}: Props): React.ReactElement<Props> {
   return (
     <Layout className="layout-container">
       <Layout.Sider width={250}>
@@ -17,7 +21,7 @@ function Component({ className, theme }: Props): React.ReactElement<Props> {
 
       <Layout.Content>
         <Header />
-        <Outlet />
+        {children}
       </Layout.Content>
     </Layout>
   )
